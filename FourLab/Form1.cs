@@ -39,7 +39,9 @@ namespace FourLab
                 }
             }
             ShowInfo();
+            
         }
+
         private void ShowInfo()
         {
             int flowersCount = 0;

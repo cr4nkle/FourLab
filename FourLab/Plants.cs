@@ -8,7 +8,7 @@ namespace FourLab
 { 
     public class Plants
     {
-        public int height=10;
+        public int height=9;
         public string GetInfo()
         {
             return height.ToString();
