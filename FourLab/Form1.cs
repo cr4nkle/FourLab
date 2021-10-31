@@ -70,7 +70,30 @@ namespace FourLab
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (this.plantList.Count == 0)
+            {
+                richTextBox1.Text = "Пусто Q_Q";
+                return;
+            }
 
+            var fruit = this.plantList[0];
+            
+            this.plantList.RemoveAt(0);
+            
+            if (fruit is Flowers)
+            {
+                richTextBox1.Text = "Цветок";
+            }
+            else if (fruit is Bush)
+            {
+                richTextBox1.Text = "Куст";
+            }
+            else if (fruit is Tree)
+            {
+                richTextBox1.Text = "Дерево";
+            }
+
+            ShowInfo();
         }
     }
 }
