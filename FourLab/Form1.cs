@@ -22,5 +22,10 @@ namespace FourLab
             var plant = new Plants();
             richTextBox1.Text = plant.GetInfo();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
