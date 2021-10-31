@@ -39,7 +39,7 @@ namespace FourLab
                 }
             }
             ShowInfo();
-            
+
         }
 
         private void ShowInfo()
@@ -48,19 +48,23 @@ namespace FourLab
             int bushCount = 0;
             int treeCount = 0;
 
+            richTextBox1.Clear();
             foreach (var plant in this.plantList)
             {
                 if (plant is Flowers) 
                 {
                     flowersCount++;
+                    richTextBox1.Text += "Цветок" + "\n";
                 }
                 else if (plant is Bush)
                 {
                     bushCount++;
+                    richTextBox1.Text += "Куст" + "\n";
                 }
                 else if (plant is Tree)
                 {
                     treeCount++;
+                    richTextBox1.Text += "Дерево" + "\n";
                 }
             }
             richTextBox2.Text = "Цветок\tКуст\tДерево";
@@ -68,7 +72,8 @@ namespace FourLab
             richTextBox2.Text += String.Format("{0}\t{1}\t{2}", flowersCount, bushCount, treeCount);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+               
+            private void button2_Click(object sender, EventArgs e)
         {
             if (this.plantList.Count == 0)
             {
@@ -76,19 +81,19 @@ namespace FourLab
                 return;
             }
 
-            var fruit = this.plantList[0];
+            var plant = this.plantList[0];
             
             this.plantList.RemoveAt(0);
             
-            if (fruit is Flowers)
+            if (plant is Flowers)
             {
                 richTextBox1.Text = "Цветок";
             }
-            else if (fruit is Bush)
+            else if (plant is Bush)
             {
                 richTextBox1.Text = "Куст";
             }
-            else if (fruit is Tree)
+            else if (plant is Tree)
             {
                 richTextBox1.Text = "Дерево";
             }
