@@ -17,5 +17,10 @@ namespace FourLab
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var plant = new Plants();
+            richTextBox1.Text = plant.GetInfo();
+        }
     }
 }

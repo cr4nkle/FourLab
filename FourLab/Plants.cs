@@ -8,26 +8,36 @@ namespace FourLab
 { 
     public class Plants
     {
-        public int height;
+        public int height=10;
+        public string GetInfo()
+        {
+            return height.ToString();
+        }
+        public override string ToString()
+        {
+            return height.ToString();
+        }
     }
 
+    public enum FlowerType { garden, forest,wild }
     public class Flowers : Plants
     {
-        public int PetalCount;
-        public string colour;
-        public string type;
+        public int PetalCount=0;
+        public string colour="blue";
+        public FlowerType type= FlowerType.wild;
+
     }
 
     public class Bush : Plants
     {
-        public bool WithFlower;
-        public int BranchCount;
+        public bool WithFlower=true;
+        public int BranchCount=0;
     }
 
     public enum TreeType { coniferous, leafy }
     public class Tree : Plants
     {
-        public int radius;
-        public TreeType type;
+        public int radius=0;
+        public TreeType type= TreeType.leafy;
     }
 }
