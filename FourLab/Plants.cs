@@ -16,7 +16,15 @@ namespace FourLab
             str += "\n";
             return str;
         }
+
         public static Random rnd = new Random();
+
+        public virtual string GetColour()
+        {
+            var str = "";
+            str = "C:/Users/cr4nk/source/repos/FourLab/plant.jpg";
+            return str;
+        }
     }
 
     public enum FlowerType { garden, forest, wild }
@@ -43,9 +51,39 @@ namespace FourLab
             return new Flowers
             {
                 height = 1 + rnd.Next() % 100,
+                petalCount = 1 + rnd.Next() % 30,
                 colour = (FlowerColour)rnd.Next(5),
                 type = (FlowerType)rnd.Next(2) 
             };
+        }
+        public override string GetColour()
+        {
+            var str = "";
+            if (colour == FlowerColour.blue)
+            {
+                str = "C:/Users/cr4nk/source/repos/FourLab/flowerB.jpg";
+            }
+            else if (colour == FlowerColour.pink)
+            {
+                str = "C:/Users/cr4nk/source/repos/FourLab/flowerP.jpg";
+            }
+            else if (colour == FlowerColour.red)
+            {
+                str = "C:/Users/cr4nk/source/repos/FourLab/flowerR.jpg";
+            }
+            else if(colour == FlowerColour.orange)
+            {
+                str = "C:/Users/cr4nk/source/repos/FourLab/flowerO.jpg";
+            }
+            else if(colour == FlowerColour.white)
+            {
+                str = "C:/Users/cr4nk/source/repos/FourLab/flowerW.jpg";
+            }
+            else
+            {
+                str = base.GetColour();
+            }
+            return str;
         }
     }
 

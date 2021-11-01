@@ -17,6 +17,8 @@ namespace FourLab
         {
             InitializeComponent();
             ShowInfo();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/korzina.jpg");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,22 +50,33 @@ namespace FourLab
             int bushCount = 0;
             int treeCount = 0;
             
-            richTextBox1.Clear();
+            richTextBox3.Clear();
+            
             foreach (var plant in this.plantList)
             {
                 if (plant is Flowers) 
                 {
                     flowersCount++;
+                    /*pictureBox2.Image = null;
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/flowerB.jpg");*/
                 }
                 else if (plant is Bush)
                 {
                     bushCount++;
+                    /*pictureBox2.Image = null;
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/plant.jpg");*/
                 }
                 else if (plant is Tree)
                 {
                     treeCount++;
+                    /*pictureBox2.Image = null;
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/flowerO.jpg");*/
                 }
-                richTextBox1.Text += plant.GetInfo()+"\n";
+                richTextBox3.Text += plant.GetInfo()+"\n";
+                
             }
             
             richTextBox2.Text = "Цветок\tКустарник\tДерево";
@@ -72,7 +85,7 @@ namespace FourLab
         }
 
                
-            private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (this.plantList.Count == 0)
             {
@@ -83,10 +96,14 @@ namespace FourLab
             var plant = this.plantList[0];
             
             this.plantList.RemoveAt(0);
-            
+            richTextBox1.Text = plant.GetInfo();
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.Image = Image.FromFile(plant.GetColour());
+            ShowInfo();
             
 
-            ShowInfo();
         }
+
+        
     }
 }
