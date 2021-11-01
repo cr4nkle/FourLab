@@ -13,10 +13,6 @@ namespace FourLab
         {
             return "Я растение";
         }
-        public override string ToString()
-        {
-            return height.ToString();
-        }
     }
 
     public enum FlowerType { garden, forest, wild }
@@ -28,7 +24,9 @@ namespace FourLab
 
         public override string GetInfo()
         {
-            return "Цветок";
+            var str = "Цветок";
+            str += String.Format("\tСпелость{0}", this.height);
+            return str;
         }
     }
 
@@ -39,7 +37,9 @@ namespace FourLab
 
         public override string GetInfo()
         {
-            return "Кустарник";
+            var str = "Кустарник";
+            str += String.Format("\tСпелость{0}", this.height);
+            return str;
         }
     }
 
@@ -51,7 +51,9 @@ namespace FourLab
 
         public override string GetInfo()
         {
-            return "Дерево";
+            var str = "Дерево";
+            str += String.Format("\tСпелость{0}", this.height);
+            return str;
         }
     }
 }
