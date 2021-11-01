@@ -28,13 +28,22 @@ namespace FourLab
                 switch (rnd.Next() % 3)
                 {
                     case 0: 
-                        this.plantList.Add(new Flowers());
+                        this.plantList.Add(new Flowers 
+                        {
+                            height = rnd.Next() % 101
+                        });
                         break;
                     case 1: 
-                        this.plantList.Add(new Bush());
+                        this.plantList.Add(new Bush
+                        {
+                            height = rnd.Next() % 101
+                        });
                         break;
                     case 2: 
-                        this.plantList.Add(new Tree());
+                        this.plantList.Add(new Tree
+                        {
+                            height = rnd.Next() % 101
+                        });
                         break;
                 }
             }
