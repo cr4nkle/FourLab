@@ -47,26 +47,25 @@ namespace FourLab
             int flowersCount = 0;
             int bushCount = 0;
             int treeCount = 0;
-
+            
             richTextBox1.Clear();
             foreach (var plant in this.plantList)
             {
                 if (plant is Flowers) 
                 {
                     flowersCount++;
-                    richTextBox1.Text += "Цветок" + "\n";
                 }
                 else if (plant is Bush)
                 {
                     bushCount++;
-                    richTextBox1.Text += "Куст" + "\n";
                 }
                 else if (plant is Tree)
                 {
                     treeCount++;
-                    richTextBox1.Text += "Дерево" + "\n";
                 }
+                richTextBox1.Text += plant.GetInfo()+"\n";
             }
+            
             richTextBox2.Text = "Цветок\tКуст\tДерево";
             richTextBox2.Text += "\n";
             richTextBox2.Text += String.Format("{0}\t{1}\t{2}", flowersCount, bushCount, treeCount);
