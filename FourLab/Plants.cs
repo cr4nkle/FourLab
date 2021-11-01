@@ -10,28 +10,42 @@ namespace FourLab
     {
         public int height=9;
         public virtual string GetInfo()
-        {
-            var str = "Я растение";
-            str += String.Format("\tВысота: {0}", this.height);
+        { 
+            var str = "";
+            str += String.Format("\nВысота: {0}", this.height);
+            str += "\n";
             return str;
         }
+        public static Random rnd = new Random();
     }
 
     public enum FlowerType { garden, forest, wild }
+    public enum FlowerColour { blue, pink, red, orange, white }
     public class Flowers : Plants
     {
         public int petalCount=0;
-        public string colour="blue";
+        public FlowerColour colour=FlowerColour.blue;
         public FlowerType type= FlowerType.wild;
 
         public override string GetInfo()
         {
             var str = "Цветок";
-            str += base.GetInfo();
+            
             str += String.Format("\nКоличество лепестков: {0}", this.petalCount);
             str += String.Format("\nЦвет: {0}", this.colour);
             str += String.Format("\nТип цветка: {0}", this.type);
+            str += base.GetInfo();
             return str;
+        }
+
+        public static Flowers Generate()
+        {
+            return new Flowers
+            {
+                height = rnd.Next() % 100,
+                colour = (FlowerColour)rnd.Next(5),
+                type = (FlowerType)rnd.Next(2) 
+            };
         }
     }
 
@@ -43,9 +57,21 @@ namespace FourLab
         public override string GetInfo()
         {
             var str = "Кустарник";
+            
             str += String.Format("\nНаличие цветков: {0}", this.withFlower);
             str += String.Format("\nКоличество веток: {0}", this.branchCount);
+            str += base.GetInfo();
             return str;
+        }
+
+        public static Bush Generate()
+        {
+            return new Bush
+            {
+                height = rnd.Next() % 100,
+                withFlower = rnd.Next() % 2 ==0,
+                branchCount = rnd.Next() % 10
+            };
         }
     }
 
@@ -58,9 +84,21 @@ namespace FourLab
         public override string GetInfo()
         {
             var str = "Дерево";
+            
             str += String.Format("\nРадиус: {0}", this.radius);
             str += String.Format("\nТип дерева: {0}", this.type);
+            str += base.GetInfo();
             return str;
+        }
+
+        public static Tree Generate()
+        {
+            return new Tree
+            {
+                height = rnd.Next() % 100,
+                radius = rnd.Next() % 50,
+                type = (TreeType)rnd.Next(2)
+            };
         }
     }
 }
