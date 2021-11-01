@@ -85,18 +85,7 @@ namespace FourLab
             
             this.plantList.RemoveAt(0);
             
-            if (plant is Flowers)
-            {
-                richTextBox1.Text = "Цветок";
-            }
-            else if (plant is Bush)
-            {
-                richTextBox1.Text = "Куст";
-            }
-            else if (plant is Tree)
-            {
-                richTextBox1.Text = "Дерево";
-            }
+            
 
             ShowInfo();
         }
