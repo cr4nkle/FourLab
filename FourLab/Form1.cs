@@ -57,28 +57,17 @@ namespace FourLab
                 if (plant is Flowers) 
                 {
                     flowersCount++;
-                    /*pictureBox2.Image = null;
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/flowerB.jpg");*/
                 }
                 else if (plant is Bush)
                 {
                     bushCount++;
-                    /*pictureBox2.Image = null;
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/plant.jpg");*/
                 }
                 else if (plant is Tree)
                 {
                     treeCount++;
-                    /*pictureBox2.Image = null;
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab/flowerO.jpg");*/
                 }
                 richTextBox3.Text += plant.GetInfo()+"\n";
-                
             }
-            
             richTextBox2.Text = "Цветок\tКустарник\tДерево";
             richTextBox2.Text += "\n";
             richTextBox2.Text += String.Format("{0}\t{1}\t\t{2}", flowersCount, bushCount, treeCount);
@@ -86,19 +75,18 @@ namespace FourLab
 
                
         private void button2_Click(object sender, EventArgs e)
-        {
+        {            
             if (this.plantList.Count == 0)
             {
                 richTextBox1.Text = "Пусто Q_Q";
+                pictureBox2.Image = null;
                 return;
-            }
-
+            } 
             var plant = this.plantList[0];
-            
             this.plantList.RemoveAt(0);
             richTextBox1.Text = plant.GetInfo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.Image = Image.FromFile(plant.GetColour());
+            pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab" + plant.GetPicture());
             ShowInfo();
             
 

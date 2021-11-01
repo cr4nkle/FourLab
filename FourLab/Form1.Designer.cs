@@ -54,7 +54,7 @@ namespace FourLab
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 154);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 322);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(254, 127);
             this.richTextBox1.TabIndex = 1;
@@ -119,9 +119,9 @@ namespace FourLab
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(12, 287);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 154);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(162, 112);
+            this.pictureBox2.Size = new System.Drawing.Size(254, 162);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -129,7 +129,7 @@ namespace FourLab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 502);
+            this.ClientSize = new System.Drawing.Size(615, 459);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);

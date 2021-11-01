@@ -19,10 +19,9 @@ namespace FourLab
 
         public static Random rnd = new Random();
 
-        public virtual string GetColour()
+        public virtual string GetPicture()
         {
-            var str = "";
-            str = "C:/Users/cr4nk/source/repos/FourLab/plant.jpg";
+            var str = "/plant.jpg";
             return str;
         }
     }
@@ -56,32 +55,28 @@ namespace FourLab
                 type = (FlowerType)rnd.Next(2) 
             };
         }
-        public override string GetColour()
+        public override string GetPicture()
         {
             var str = "";
             if (colour == FlowerColour.blue)
             {
-                str = "C:/Users/cr4nk/source/repos/FourLab/flowerB.jpg";
+                str = "/flowerB.jpg";
             }
             else if (colour == FlowerColour.pink)
             {
-                str = "C:/Users/cr4nk/source/repos/FourLab/flowerP.jpg";
+                str = "/flowerP.jpg";
             }
             else if (colour == FlowerColour.red)
             {
-                str = "C:/Users/cr4nk/source/repos/FourLab/flowerR.jpg";
+                str = "/flowerR.jpg";
             }
             else if(colour == FlowerColour.orange)
             {
-                str = "C:/Users/cr4nk/source/repos/FourLab/flowerO.jpg";
+                str = "/flowerO.jpg";
             }
             else if(colour == FlowerColour.white)
             {
-                str = "C:/Users/cr4nk/source/repos/FourLab/flowerW.jpg";
-            }
-            else
-            {
-                str = base.GetColour();
+                str = "/flowerW.jpg";
             }
             return str;
         }
@@ -111,6 +106,11 @@ namespace FourLab
                 branchCount = 1 + rnd.Next() % 10
             };
         }
+        public override string GetPicture()
+        {
+            var str = "/bush.jpg";
+            return str;
+        }
     }
 
     public enum TreeType { coniferous, leafy }
@@ -137,6 +137,20 @@ namespace FourLab
                 radius = 10 + rnd.Next() % 40,
                 type = (TreeType)rnd.Next(2)
             };
+        }
+        public override string GetPicture()
+        {
+            var str = "";
+            if (type == TreeType.coniferous)
+            {
+                str = "/treeC.jpg";
+            }
+            else if (type == TreeType.leafy)
+            {
+                str = "/treeL.jpg";
+            }
+            
+            return str;
         }
     }
 }
