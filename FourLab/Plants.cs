@@ -42,7 +42,7 @@ namespace FourLab
         {
             return new Flowers
             {
-                height = rnd.Next() % 100,
+                height = 1 + rnd.Next() % 100,
                 colour = (FlowerColour)rnd.Next(5),
                 type = (FlowerType)rnd.Next(2) 
             };
@@ -68,9 +68,9 @@ namespace FourLab
         {
             return new Bush
             {
-                height = rnd.Next() % 100,
+                height = 1 + rnd.Next() % 10,
                 withFlower = rnd.Next() % 2 ==0,
-                branchCount = rnd.Next() % 10
+                branchCount = 1 + rnd.Next() % 10
             };
         }
     }
@@ -95,8 +95,8 @@ namespace FourLab
         {
             return new Tree
             {
-                height = rnd.Next() % 100,
-                radius = rnd.Next() % 50,
+                height = 1 + rnd.Next() % 100,
+                radius = 10 + rnd.Next() % 40,
                 type = (TreeType)rnd.Next(2)
             };
         }
