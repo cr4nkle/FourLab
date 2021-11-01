@@ -66,9 +66,9 @@ namespace FourLab
                 richTextBox1.Text += plant.GetInfo()+"\n";
             }
             
-            richTextBox2.Text = "Цветок\tКуст\tДерево";
+            richTextBox2.Text = "Цветок\tКустарник\tДерево";
             richTextBox2.Text += "\n";
-            richTextBox2.Text += String.Format("{0}\t{1}\t{2}", flowersCount, bushCount, treeCount);
+            richTextBox2.Text += String.Format("{0}\t{1}\t\t{2}", flowersCount, bushCount, treeCount);
         }
 
                
