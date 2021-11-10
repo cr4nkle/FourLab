@@ -86,8 +86,11 @@ namespace FourLab
             this.plantList.RemoveAt(0);
             richTextBox1.Text = plant.GetInfo();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.Image = Image.FromFile("C:/Users/cr4nk/source/repos/FourLab" + plant.GetPicture());
+            
+            pictureBox2.Image = plant.GetPicture();
             ShowInfo();
+
+            
             
 
         }

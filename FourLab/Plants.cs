@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,20 +20,19 @@ namespace FourLab
 
         public static Random rnd = new Random();
 
-        public virtual string GetPicture()
+        public virtual Image GetPicture()
         {
-            var str = "/plant.jpg";
-            return str;
+            return Properties.Resources.plant;
         }
     }
 
-    public enum FlowerType { garden, forest, wild }
-    public enum FlowerColour { blue, pink, red, orange, white }
+    public enum FlowerType { Садовые, Лесные, Полевые }
+    public enum FlowerColour { Синий, Розовый, Красный, Оранжевый, Белый }
     public class Flowers : Plants
     {
         public int petalCount=0;
-        public FlowerColour colour=FlowerColour.blue;
-        public FlowerType type= FlowerType.wild;
+        public FlowerColour colour=FlowerColour.Синий;
+        public FlowerType type= FlowerType.Полевые;
 
         public override string GetInfo()
         {
@@ -49,34 +49,34 @@ namespace FourLab
         {
             return new Flowers
             {
-                height = 1 + rnd.Next() % 100,
+                height = 1 + rnd.Next() % 5,
                 petalCount = 1 + rnd.Next() % 30,
                 colour = (FlowerColour)rnd.Next(5),
                 type = (FlowerType)rnd.Next(2) 
             };
         }
-        public override string GetPicture()
+        public override Image GetPicture()
         {
-            var str = "";
-            if (colour == FlowerColour.blue)
+            Image str = null;
+            if (colour == FlowerColour.Синий)
             {
-                str = "/flowerB.jpg";
+                str = Properties.Resources.flowerB;
             }
-            else if (colour == FlowerColour.pink)
+            else if (colour == FlowerColour.Розовый)
             {
-                str = "/flowerP.jpg";
+                str = Properties.Resources.flowerP;
             }
-            else if (colour == FlowerColour.red)
+            else if (colour == FlowerColour.Красный)
             {
-                str = "/flowerR.jpg";
+                str = Properties.Resources.flowerR;
             }
-            else if(colour == FlowerColour.orange)
+            else if(colour == FlowerColour.Оранжевый)
             {
-                str = "/flowerO.jpg";
+                str = Properties.Resources.flowerO;
             }
-            else if(colour == FlowerColour.white)
+            else if(colour == FlowerColour.Белый)
             {
-                str = "/flowerW.jpg";
+                str = Properties.Resources.flowerW;
             }
             return str;
         }
@@ -106,18 +106,17 @@ namespace FourLab
                 branchCount = 1 + rnd.Next() % 10
             };
         }
-        public override string GetPicture()
+        public override Image GetPicture()
         {
-            var str = "/bush.jpg";
-            return str;
+            return Properties.Resources.bush;
         }
     }
 
-    public enum TreeType { coniferous, leafy }
+    public enum TreeType { Хвойное, Листовые }
     public class Tree : Plants
     {
         public int radius=0;
-        public TreeType type= TreeType.leafy;
+        public TreeType type= TreeType.Листовые;
 
         public override string GetInfo()
         {
@@ -138,16 +137,16 @@ namespace FourLab
                 type = (TreeType)rnd.Next(2)
             };
         }
-        public override string GetPicture()
+        public override Image GetPicture()
         {
-            var str = "";
-            if (type == TreeType.coniferous)
+            Image str = null;
+            if (type == TreeType.Хвойное)
             {
-                str = "/treeC.jpg";
+                str = Properties.Resources.treeC;
             }
-            else if (type == TreeType.leafy)
+            else if (type == TreeType.Листовые)
             {
-                str = "/treeL.jpg";
+                str = Properties.Resources.treeL ;
             }
             
             return str;
